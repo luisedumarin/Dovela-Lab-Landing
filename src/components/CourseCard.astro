@@ -1,0 +1,71 @@
+---
+const { title, img, badge, price, desc, href = "#cta" } = Astro.props;
+// derive optimized sources in public/images (created by scripts/optimize-images.js)
+let src = img;
+let srcset = "";
+let pngFallback = img;
+try {
+  const fileName = img.split("/").pop() ?? "";
+  const dotIndex = fileName.lastIndexOf(".");
+  const baseName = dotIndex >= 0 ? fileName.slice(0, dotIndex) : fileName;
+  const normalizedName = baseName.replace(/\s+/g, "-");
+  const widths = [320, 640, 1200];
+  const parts = widths.map((w) => `/images/${normalizedName}-${w}.webp ${w}w`);
+  srcset = parts.join(", ");
+  // prefer webp src if available, and set png fallback path
+  src = `/images/${normalizedName}-640.webp`;
+  pngFallback = `/images/${normalizedName}-640.png`;
+} catch (e) {
+  /* fallback to provided img */
+}
+---
+
+<article
+  class="group relative bg-white border rounded-xl shadow-sm overflow-visible flex h-full flex-col max-w-[460px] mx-auto transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(13,26,46,.16)]"
+>
+  <!-- price bubble (visible over image) -->
+  <div
+    class="price-bubble absolute -top-9 -right-4 z-20 flex aspect-square w-[140px] items-center justify-center rounded-full bg-[linear-gradient(145deg,var(--accent),var(--accent-h))] text-white font-extrabold border-[6px] border-white shadow-[0_18px_36px_rgba(199,102,60,.34)] rotate-[-6deg] transition-transform duration-300 group-hover:scale-105 group-hover:rotate-[-2deg]"
+  >
+    <div class="flex flex-col items-center leading-none text-center">
+      <span class="text-[2rem] tracking-tight">$699</span>
+      <span class="mt-1 text-[.5rem] font-bold tracking-[1px] text-white/90">
+        Descuento Especial
+      </span>
+    </div>
+  </div>
+  <picture>
+    <source
+      type="image/webp"
+      srcset={srcset}
+      sizes="(max-width: 768px) 100vw, 33vw"
+    />
+    <img
+      src={pngFallback}
+      alt={title}
+      class="w-full h-[440px] object-cover"
+      loading="lazy"
+      decoding="async"
+    />
+  </picture>
+  <div class="p-3 pb-5 flex-1 flex flex-col">
+    <div class="w-[90%] mx-auto flex h-full flex-col">
+      <h5 class="text-lg font-extrabold text-black">{title}</h5>
+      <div class="mt-2 flex items-center">
+        <span
+          class="text-xs uppercase font-bold text-[#c7663c] bg-[#fbebe4] px-2 py-1 rounded"
+          >{badge}</span
+        >
+      </div>
+      <p class="mt-3 text-sm text-black flex-1">{desc}</p>
+      <div class="mt-auto pt-4 flex justify-center">
+        <a
+          href={href}
+          data-course={title}
+          class="flex w-full items-center justify-center bg-[var(--accent)] hover:bg-[var(--accent-h)] text-white font-bold px-4 py-3 rounded transition-colors duration-200"
+          >Inscribirme</a
+        >
+      </div>
+    </div>
+  </div>
+</article>

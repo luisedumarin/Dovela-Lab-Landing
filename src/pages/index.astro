@@ -1,0 +1,102 @@
+---
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import Courses from "../components/Courses.astro";
+import FechasySesiones from "../components/FechasySesiones.astro";
+import FAQ from "../components/FAQ.astro";
+import CTA from "../components/CTA.astro";
+import ChatBox from "../components/ChatBox.astro";
+import Footer from "../components/Footer.astro";
+import SocialLinks from "../components/SocialLinks.astro";
+
+const siteUrl = Astro.site?.toString() ?? "http://localhost:3000";
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString();
+const ogImage = new URL("/images/hero-1200.webp", siteUrl).toString();
+
+const organizationJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "EducationalOrganization",
+  name: "Dovela Lab",
+  url: siteUrl,
+  logo: new URL("/images/logo/LOGODOVELA.png", siteUrl).toString(),
+  description:
+    "Cursos y sesiones prácticas BIM certificados en Monterrey para formación profesional en Revit, Navisworks y Dynamo.",
+};
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/images/logo/FAVICON.png" type="image/png" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="/images/logo/FAVICON.png"
+    />
+    <title>Dovela Lab — Formación BIM Profesional</title>
+    <meta
+      name="description"
+      content="Cursos y sesiones prácticas BIM certificados en Monterrey. Revit, Navisworks, Dynamo y más."
+    />
+    <meta
+      name="keywords"
+      content="BIM, cursos BIM, Revit, Navisworks, Dynamo, Monterrey, formación BIM, Dovela Lab"
+    />
+    <meta name="robots" content="index,follow,max-image-preview:large" />
+    <!-- theme-color: terracota elegido para el sitio -->
+    <meta name="theme-color" content="#c7663c" />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="es_MX" />
+    <meta property="og:site_name" content="Dovela Lab" />
+    <meta
+      property="og:title"
+      content="Dovela Lab — Formación BIM Profesional"
+    />
+    <meta
+      property="og:description"
+      content="Cursos y sesiones prácticas BIM certificados en Monterrey. Revit, Navisworks, Dynamo y más."
+    />
+    <meta property="og:url" content={canonicalUrl} />
+    <meta property="og:image" content={ogImage} />
+    <meta
+      property="og:image:alt"
+      content="Dovela Lab — Formación BIM Profesional"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Dovela Lab — Formación BIM Profesional"
+    />
+    <meta
+      name="twitter:description"
+      content="Cursos y sesiones prácticas BIM certificados en Monterrey. Revit, Navisworks, Dynamo y más."
+    />
+    <meta name="twitter:image" content={ogImage} />
+    <link rel="preload" as="image" href="/images/hero-1200.webp" />
+    <link rel="preload" as="image" href="/images/logo/LOGODOVELA.png" />
+    <link rel="stylesheet" href="/src/styles/global.css" />
+    <script
+      type="application/ld+json"
+      set:html={JSON.stringify(organizationJsonLd)}
+    />
+    <script type="module" src="/src/scripts/gsap-client.js" defer></script>
+    <script type="module" src="/src/scripts/site-client.js" defer></script>
+  </head>
+  <body>
+    <div id="app">
+      <Nav />
+      <Hero />
+      <main>
+        <Courses />
+        <FechasySesiones />
+        <FAQ />
+        <CTA />
+        <ChatBox />
+      </main>
+      <Footer />
+    </div>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+name: Build and Deploy to Cloudflare Pages
+
+on:
+  push:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  build_and_deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      - name: Deploy to Cloudflare Pages
+        uses: cloudflare/pages-action@v1
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          projectName: ${{ secrets.CLOUDFLARE_PROJECT_NAME }}
+          directory: './dist'
+
+      # Notes: Set the following repository secrets in GitHub before using this workflow:
+      # - CLOUDFLARE_API_TOKEN: API token with Pages write permissions
+      # - CLOUDFLARE_ACCOUNT_ID: Your Cloudflare account ID
+      # - CLOUDFLARE_PROJECT_NAME: The Pages project name (the one shown in the Pages dashboard)

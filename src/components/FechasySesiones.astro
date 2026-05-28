@@ -1,0 +1,175 @@
+---
+const whatsappUrl =
+  "https://wa.me/528116076954?text=%C2%A1Hola!%20Necesito%20informaci%C3%B3n";
+import FechasyHero from "./FechasyHero.astro";
+---
+
+<FechasyHero />
+
+<div
+  class="fs-bottom mx-auto mt-0 grid max-w-[1280px] items-center justify-items-center gap-5 px-[5%] pb-10 pt-1 md:mt-8 md:grid-cols-[.95fr_1.05fr] md:justify-items-stretch md:gap-6 md:pb-20 md:pt-5"
+>
+  <div
+    class="fs-cards flex h-full w-full max-w-[26rem] flex-col gap-3 md:max-w-none md:justify-between md:gap-4 md:pb-4 md:pt-2"
+  >
+    <div
+      class="fs-card group flex min-h-[104px] flex-1 flex-col items-center gap-3 rounded-[10px] border border-[#ead7cf] bg-white p-[1rem_1.1rem] text-center shadow-[0_2px_12px_rgba(13,26,46,.07)] transition-all duration-300 hover:-translate-y-1 hover:border-[#d9b4a4] hover:shadow-[0_12px_28px_rgba(13,26,46,.12)] cursor-pointer md:h-[130px] md:min-h-[130px] md:max-h-[130px] md:flex-row md:items-start md:gap-4 md:p-[1.25rem_1.5rem] md:text-left"
+      data-fs-card
+    >
+      <div
+        class="fs-ico mx-auto text-[1.15rem] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-6deg] md:mx-0 md:text-[1.4rem]"
+      >
+        🏗
+      </div>
+      <div>
+        <div
+          class="fs-title mb-1 text-[1.2rem] font-bold leading-[1.15] text-[#2a1813] md:text-[1.25rem]"
+        >
+          Prácticas reales desde el día uno
+        </div>
+        <div
+          class="fs-desc text-[.58rem] font-light leading-[1.45] text-[#74564d] md:text-[1rem] md:leading-[1.62]"
+        >
+          Ejercicios sobre proyectos reales del sector AEC.
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="fs-card group flex min-h-[104px] flex-1 flex-col items-center gap-3 rounded-[10px] border border-[#ead7cf] bg-white p-[1rem_1.1rem] text-center shadow-[0_2px_12px_rgba(13,26,46,.07)] transition-all duration-300 hover:-translate-y-1 hover:border-[#d9b4a4] hover:shadow-[0_12px_28px_rgba(13,26,46,.12)] cursor-pointer md:h-[130px] md:min-h-[130px] md:max-h-[130px] md:flex-row md:items-start md:gap-4 md:p-[1.25rem_1.5rem] md:text-left"
+      data-fs-card
+    >
+      <div
+        class="fs-ico mx-auto text-[1.75rem] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-6deg] md:mx-0 md:text-[1.4rem]"
+      >
+        🎯
+      </div>
+      <div>
+        <div
+          class="fs-title mb-1 text-[1.2rem] font-bold leading-[1.15] text-[#2a1813] md:text-[1.25rem]"
+        >
+          Grupos reducidos, máximo impacto
+        </div>
+        <div
+          class="fs-desc text-[.58rem] font-light leading-[1.45] text-[#74564d] md:text-[1rem] md:leading-[1.62]"
+        >
+          Atención personalizada para garantizar el máximo aprendizaje.
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="fs-card group flex min-h-[104px] flex-1 flex-col items-center gap-3 rounded-[10px] border border-[#ead7cf] bg-white p-[1rem_1.1rem] text-center shadow-[0_2px_12px_rgba(13,26,46,.07)] transition-all duration-300 hover:-translate-y-1 hover:border-[#d9b4a4] hover:shadow-[0_12px_28px_rgba(13,26,46,.12)] cursor-pointer md:h-[130px] md:min-h-[130px] md:max-h-[130px] md:flex-row md:items-start md:gap-4 md:p-[1.25rem_1.5rem] md:text-left"
+      data-fs-card
+    >
+      <div
+        class="fs-ico mx-auto text-[1.15rem] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-6deg] md:mx-0 md:text-[1.4rem]"
+      >
+        💻
+      </div>
+      <div>
+        <div
+          class="fs-title mb-1 text-[1.2rem] font-bold leading-[1.15] text-[#2a1813] md:text-[1.25rem]"
+        >
+          Software y hardware incluidos
+        </div>
+        <div
+          class="fs-desc text-[.58rem] font-light leading-[1.45] text-[#74564d] md:text-[1rem] md:leading-[1.62]"
+        >
+          Licencias temporales y acceso a nuestro laboratorio.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div
+    id="fechas"
+    class="cal flex h-full min-h-[100%] w-full max-w-[26rem] flex-col overflow-hidden rounded-[10px] border border-[#ead7cf] bg-white shadow-[0_6px_30px_rgba(13,26,46,.1)] self-center pb-[.6rem] md:max-w-none md:pb-[.4rem]"
+  >
+    <div
+      class="cal-h relative overflow-hidden bg-gradient-to-br from-[#2a1813] to-[#8e4b31] px-[1.3rem] py-[1.2rem] text-center md:px-[1.8rem] md:py-[1.85rem]"
+    >
+      <h3
+        class="relative z-[1] mb-1 text-[1.45rem] font-bold text-white md:text-[2rem]"
+      >
+        Próximas Fechas
+      </h3>
+      <p
+        class="relative z-[1] text-[.82rem] tracking-[1.2px] text-white/65 md:text-[1rem] md:tracking-[1.5px]"
+      >
+        Junio 2026
+      </p>
+    </div>
+    <div
+      class="cal-b flex flex-1 flex-col justify-between px-[1.05rem] pt-[1rem] pb-[.2rem] md:px-[1.6rem] md:pt-[1.45rem] md:pb-[.2rem]"
+    >
+      <div class="cal-rows flex flex-col">
+        <div
+          class="cal-row flex items-center justify-between border-b border-[#ead7cf] py-[.55rem] md:py-[.75rem]"
+        >
+          <div>
+            <strong
+              class="mb-[.1rem] block text-[.72rem] font-bold leading-[1.2] text-[#2a1813] md:text-[.83rem]"
+              >Láminas Arquitectónicas Profesionales</strong
+            >
+          </div>
+          <span
+            class="tc-tag tp inline-block rounded-[4px] bg-[rgba(143,75,49,.12)] px-[.55rem] py-[.18rem] text-[.58rem] font-bold uppercase tracking-[.6px] text-[#8e4b31] md:px-[.55rem] md:py-[.18rem] md:text-[.58rem] md:tracking-[.6px]"
+            >Presencial</span
+          >
+        </div>
+        <div
+          class="cal-row flex items-center justify-between border-b border-[#ead7cf] py-[.55rem] md:py-[.75rem]"
+        >
+          <div>
+            <strong
+              class="mb-[.1rem] block text-[.72rem] font-bold leading-[1.2] text-[#2a1813] md:text-[.83rem]"
+              >Introducción a la Metodología BIM</strong
+            >
+          </div>
+          <span
+            class="tc-tag to inline-block rounded-[4px] bg-[rgba(199,102,60,.12)] px-[.55rem] py-[.18rem] text-[.58rem] font-bold uppercase tracking-[.6px] text-[#c7663c] md:px-[.55rem] md:py-[.18rem] md:text-[.58rem] md:tracking-[.6px]"
+            >En línea</span
+          >
+        </div>
+        <div
+          class="cal-row flex items-center justify-between border-b border-[#ead7cf] py-[.55rem] md:py-[.75rem]"
+        >
+          <div>
+            <strong
+              class="mb-[.1rem] block text-[.72rem] font-bold leading-[1.2] text-[#2a1813] md:text-[.83rem]"
+              >Proyecto Ejecutivo Básico</strong
+            >
+          </div>
+          <span
+            class="tc-tag tp inline-block rounded-[4px] bg-[rgba(143,75,49,.12)] px-[.55rem] py-[.18rem] text-[.58rem] font-bold uppercase tracking-[.6px] text-[#8e4b31] md:px-[.55rem] md:py-[.18rem] md:text-[.58rem] md:tracking-[.6px]"
+            >Presencial</span
+          >
+        </div>
+        <div
+          class="cal-row flex items-center justify-between py-[.55rem] md:py-[.75rem]"
+        >
+          <div>
+            <strong
+              class="mb-[.1rem] block text-[.72rem] font-bold leading-[1.2] text-[#2a1813] md:text-[.83rem]"
+              >Proyecto MEP Básico en Revit</strong
+            >
+          </div>
+          <span
+            class="tc-tag to inline-block rounded-[4px] bg-[rgba(199,102,60,.12)] px-[.55rem] py-[.18rem] text-[.58rem] font-bold uppercase tracking-[.6px] text-[#c7663c] md:px-[.55rem] md:py-[.18rem] md:text-[.58rem] md:tracking-[.6px]"
+            >En línea</span
+          >
+        </div>
+      </div>
+    </div>
+    <a
+      href={whatsappUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="wa-btn cal-cta mx-auto mt-0 mb-0 flex w-full max-w-[24rem] items-center justify-center gap-2 rounded-[6px] border-0 bg-[#25d366] px-6 py-2 text-center text-[.92rem] font-bold tracking-[.3px] text-white no-underline shadow-[0_4px_18px_rgba(37,211,102,.2)] transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-[0_6px_22px_rgba(37,211,102,.28)] md:mt-[-4rem] md:mb-6 md:w-full md:max-w-[33rem] md:px-6 md:py-2 md:text-[.95rem]"
+      data-wa-url={whatsappUrl}
+    >
+      Información por WhatsApp
+    </a>
+  </div>
+</div>

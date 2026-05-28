@@ -1,0 +1,197 @@
+---
+const whatsappUrl =
+  "https://wa.me/528116076954?text=%C2%A1Hola!%20Necesito%20informaci%C3%B3n";
+---
+
+<section
+  id="cta"
+  class="sec-dark bg-[#2a1813] py-[var(--sec)] md:py-[calc(var(--sec)+1rem)]"
+>
+  <div
+    class="cta-layout mx-auto grid max-w-[1280px] grid-cols-1 gap-12 px-[5%] md:grid-cols-2 md:gap-20 md:items-center"
+  >
+    <div
+      class="reveal-l mx-auto flex w-full max-w-[460px] flex-col items-center text-center md:mx-0 md:max-w-none md:items-center md:text-center md:self-center"
+    >
+      <div></div>
+      <h2
+        class="cta-t mb-4 text-[2.6rem] md:text-[3.7rem] font-black leading-none tracking-[-1.5px] text-white"
+      >
+        Transforma tu<br /><span class="text-[#e08a60]">Carrera BIM</span>
+      </h2>
+      <p
+        class="cta-sub mb-8 max-w-[460px] text-[.93rem] font-light leading-[1.76] text-white/55 md:mx-0 md:max-w-[420px]"
+      >
+        Cupos limitados a 12 participantes por grupo para garantizar la calidad
+        de formación que nos distingue.
+      </p>
+      <button
+        type="button"
+        class="wa-btn mx-auto inline-flex items-center gap-[.55rem] rounded-[5px] bg-[#25d366] px-[2.35rem] py-[1rem] text-[.88rem] font-bold text-white shadow-[0_4px_18px_rgba(37,211,102,.2)] transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-[0_6px_22px_rgba(37,211,102,.28)] md:mx-0"
+        data-wa-url={whatsappUrl}
+      >
+        Información por WhatsApp
+      </button>
+      <div
+        class="cta-trust mt-7 flex flex-col items-center gap-[.7rem] md:items-start"
+      >
+        <div
+          class="ct-row flex items-center justify-center gap-[.65rem] text-center text-[.78rem] font-normal text-white/55 md:justify-start md:text-left"
+        >
+          <!-- Pago a Mensualidades Sin Intereses eliminado -->
+        </div>
+        <div
+          class="ct-row flex items-center gap-2 text-white/55 md:justify-start md:text-left"
+        >
+          <svg
+            class="ct-ico h-[18px] w-[18px] shrink-0 stroke-white/40"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke-width="2"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8a19.79 19.79 0 01-3.07-8.63A2 2 0 012 0h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L6.91 7.91a16 16 0 006.29 6.29l1.28-1.29a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"
+            ></path>
+          </svg>
+          <span>Asesoría gratuita antes de inscribirte</span>
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="cta-form-wrap reveal-r mx-auto w-full max-w-[360px] rounded-[10px] bg-white p-4 shadow-[0_20px_60px_rgba(0,0,0,.18)] md:mx-0 md:-mt-6 md:max-w-none md:p-6 text-center md:text-left"
+    >
+      <div
+        class="cf-title mb-1 text-[1.35rem] font-extrabold text-black md:text-[1.65rem] text-center md:text-left"
+      >
+        Solicita Información
+      </div>
+      <div
+        class="cf-sub mb-5 text-[.72rem] font-light text-[#74564d] md:mb-6 md:text-[.78rem]"
+      >
+      </div>
+      <form
+        class="cform flex flex-col gap-[.7rem]"
+        id="contactForm"
+        data-endpoint="https://formspree.io/f/xaqklajq"
+        novalidate
+      >
+        <input type="hidden" name="_subject" value="Nueva solicitud Dovela" />
+        <div
+          class="cf-row grid grid-cols-1 gap-[.7rem] md:grid-cols-2 md:gap-[.8rem]"
+        >
+          <div class="cf-field flex flex-col gap-[.25rem]">
+            <label
+              class="block w-full text-[.9rem] font-bold tracking-[.5px] text-[#4d342d] md:text-[.92rem] text-center md:text-left"
+              for="cf-nombre">Nombre</label
+            >
+            <input
+              type="text"
+              id="cf-nombre"
+              name="nombre"
+              placeholder="Tu nombre"
+              required
+              class="w-full rounded-[5px] border border-[#ead7cf] bg-[#fbf3ef] px-3 py-[.5rem] text-[.95rem] text-[#221714] outline-none text-left md:text-left md:px-4 md:py-[.56rem]"
+            />
+          </div>
+          <div class="cf-field flex flex-col gap-[.25rem]">
+            <label
+              class="block w-full text-[.9rem] font-bold tracking-[.5px] text-[#4d342d] md:text-[.92rem] text-center md:text-left"
+              for="cf-apellido">Apellido</label
+            >
+            <input
+              type="text"
+              id="cf-apellido"
+              name="apellido"
+              placeholder="Tu apellido"
+              required
+              class="w-full rounded-[5px] border border-[#ead7cf] bg-[#fbf3ef] px-3 py-[.5rem] text-[.95rem] text-[#221714] outline-none text-left md:text-left md:px-4 md:py-[.56rem]"
+            />
+          </div>
+        </div>
+        <div class="cf-field flex flex-col gap-[.25rem]">
+          <label
+            class="text-[.9rem] font-bold tracking-[.5px] text-[#4d342d] md:text-[.92rem]"
+            >Correo Electrónico</label
+          >
+          <input
+            id="cf-email"
+            name="email"
+            placeholder="correo@ejemplo.com"
+            required
+            class="w-full rounded-[5px] border border-[#ead7cf] bg-[#fbf3ef] px-3 py-[.45rem] text-[.95rem] text-[#221714] outline-none md:px-3 md:py-[.5rem]"
+          />
+        </div>
+        <div class="cf-field flex flex-col gap-[.25rem]">
+          <label
+            class="text-[.9rem] font-bold tracking-[.5px] text-[#4d342d] md:text-[.92rem]"
+            >WhatsApp / Teléfono</label
+          >
+          <input
+            id="cf-tel"
+            name="telefono"
+            placeholder="+52 81 0000 0000"
+            required
+            class="w-full rounded-[5px] border border-[#ead7cf] bg-[#fbf3ef] px-3 py-[.45rem] text-[.95rem] text-[#221714] outline-none md:px-3 md:py-[.5rem]"
+          />
+        </div>
+        <div class="cf-field flex flex-col gap-[.25rem]">
+          <label
+            class="text-[.9rem] font-bold tracking-[.5px] text-[#4d342d] md:text-[.92rem]"
+            >Curso de Interés</label
+          >
+          <select
+            id="cf-curso"
+            name="interes"
+            required
+            class="w-full cursor-pointer rounded-[5px] border border-[#ead7cf] bg-[#fbf3ef] px-3 py-[.45rem] text-[.95rem] text-[#221714] outline-none md:px-3 md:py-[.5rem]"
+          >
+            <option value="" disabled selected hidden
+              >Selecciona una opción</option
+            >
+            <option value="Láminas Arquitectónicas Profesionales"
+              >Láminas Arquitectónicas Profesionales</option
+            >
+            <option value="Introducción a la Metodología BIM"
+              >Introducción a la Metodología BIM</option
+            >
+            <option value="Proyecto Ejecutivo Básico"
+              >Proyecto Ejecutivo Básico</option
+            >
+            <option value="Proyecto MEP Básico en Revit"
+              >Proyecto MEP Básico en Revit</option
+            >
+          </select>
+        </div>
+        <div class="cf-field flex flex-col gap-[.25rem]">
+          <label
+            class="text-[.9rem] font-bold tracking-[.5px] text-[#4d342d] md:text-[.92rem]"
+            >Mensaje (Opcional)</label
+          >
+          <textarea
+            id="cf-msg"
+            name="mensaje"
+            placeholder="Cuéntanos sobre tu perfil o proyecto…"
+            class="min-h-[64px] resize-none rounded-[5px] border border-[#ead7cf] bg-[#fbf3ef] px-3 py-[.45rem] text-[.95rem] text-[#221714] outline-none md:min-h-[68px] md:px-3 md:py-[.5rem]"
+          ></textarea>
+        </div>
+        <button
+          type="submit"
+          class="cf-submit mt-1 w-full rounded-[6px] border-0 bg-gradient-to-br from-[#8e4b31] to-[#c7663c] px-8 py-2 text-[.92rem] font-bold text-white shadow-[0_8px_22px_rgba(199,102,60,.22)] md:py-2 md:text-[.92rem]"
+        >
+          Quiero información
+        </button>
+        <div
+          id="cf-ok"
+          class="cf-success hidden rounded-[10px] border border-[#d9b4a4] p-6 text-center"
+          style="background:#ffffff;color:#111111"
+        >
+          <span class="mb-2 block text-[2rem]">✅</span>
+          <p style="margin:0;font-weight:700">Mensaje enviado</p>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- Bloque duplicado eliminado -->

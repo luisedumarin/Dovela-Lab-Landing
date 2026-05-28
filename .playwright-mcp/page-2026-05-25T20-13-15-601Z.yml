@@ -1,0 +1,260 @@
+- generic [ref=e2]:
+  - navigation "Main navigation" [ref=e3]:
+    - generic [ref=e4]:
+      - link "Ir al inicio" [ref=e5] [cursor=pointer]:
+        - /url: "#"
+        - img "Dovela Lab logo" [ref=e7]
+      - list [ref=e8]:
+        - listitem [ref=e9]:
+          - link "Cursos" [ref=e10] [cursor=pointer]:
+            - /url: "#cursos"
+        - listitem [ref=e11]:
+          - link "Fechas" [ref=e12] [cursor=pointer]:
+            - /url: "#fechasysesiones"
+        - listitem [ref=e13]:
+          - link "Preguntas" [ref=e14] [cursor=pointer]:
+            - /url: "#faq"
+      - link "Inscribirme" [ref=e15] [cursor=pointer]:
+        - /url: "#cta"
+  - generic [ref=e17]:
+    - img "Próximamente Dovela Lab" [ref=e19]
+    - generic [ref=e20]:
+      - generic [ref=e21]: Inscripciones Abiertas
+      - generic [ref=e22]: Inscribete en Dovela Lab
+      - form "Formulario de inscripción rápida" [ref=e23]:
+        - generic [ref=e24]:
+          - generic [ref=e25]: Nombre
+          - textbox "Nombre" [ref=e26]:
+            - /placeholder: Tu nombre
+        - generic [ref=e27]:
+          - generic [ref=e28]: Correo
+          - textbox "Correo" [ref=e29]:
+            - /placeholder: correo@ejemplo.com
+        - generic [ref=e30]:
+          - generic [ref=e31]: WhatsApp / Teléfono
+          - textbox "WhatsApp / Teléfono" [ref=e32]:
+            - /placeholder: +52 81 0000 0000
+        - generic [ref=e33]:
+          - generic [ref=e34]: Interés Principal
+          - combobox "Interés Principal" [ref=e35] [cursor=pointer]:
+            - option "Selecciona una Opción" [selected]
+            - option "Láminas Arquitectónicas Profesionales"
+            - option "Introducción a la Metodología BIM"
+            - option "Proyecto Ejecutivo Básico"
+            - option "Proyecto MEP Básico en Revit"
+        - button "Quiero Información" [ref=e36] [cursor=pointer]
+  - main [ref=e37]:
+    - generic [ref=e39]:
+      - generic [ref=e40]:
+        - heading "Cursos Disponibles" [level=2] [ref=e41]:
+          - text: Cursos
+          - emphasis [ref=e42]: Disponibles
+        - paragraph [ref=e43]: “Conoce nuestros cursos y prepárate para las oportunidades del futuro.”
+      - generic [ref=e44]:
+        - article [ref=e45]:
+          - generic [ref=e47]:
+            - generic [ref=e48]: $699
+            - generic [ref=e49]: Descuento Especial
+          - img "Láminas Arquitectónicas Profesionales" [ref=e51]
+          - generic [ref=e53]:
+            - heading "Láminas Arquitectónicas Profesionales" [level=5] [ref=e54]
+            - generic [ref=e56]: Presencial
+            - paragraph [ref=e57]: Transforma tus proyectos en presentaciones que venden. En 12 horas intensivas dominarás la presentación profesional.
+            - link "Inscribirme" [ref=e59] [cursor=pointer]:
+              - /url: "#cta"
+        - article [ref=e60]:
+          - generic [ref=e62]:
+            - generic [ref=e63]: $699
+            - generic [ref=e64]: Descuento Especial
+          - img "Introducción a la Metodología BIM" [ref=e66]
+          - generic [ref=e68]:
+            - heading "Introducción a la Metodología BIM" [level=5] [ref=e69]
+            - generic [ref=e71]: En línea
+            - paragraph [ref=e72]: Entiende qué es BIM, cómo se implementa y por qué las empresas lo exigen.
+            - link "Inscribirme" [ref=e74] [cursor=pointer]:
+              - /url: "#cta"
+        - article [ref=e75]:
+          - generic [ref=e77]:
+            - generic [ref=e78]: $699
+            - generic [ref=e79]: Descuento Especial
+          - img "Proyecto Ejecutivo Básico" [ref=e81]
+          - generic [ref=e83]:
+            - heading "Proyecto Ejecutivo Básico" [level=5] [ref=e84]
+            - generic [ref=e86]: Presencial
+            - paragraph [ref=e87]: "Aprende a estructurar proyectos ejecutivos completos: plantas, cortes y coordinación."
+            - link "Inscribirme" [ref=e89] [cursor=pointer]:
+              - /url: "#cta"
+        - article [ref=e90]:
+          - generic [ref=e92]:
+            - generic [ref=e93]: $699
+            - generic [ref=e94]: Descuento Especial
+          - img "Proyecto MEP Básico en Revit" [ref=e96]
+          - generic [ref=e98]:
+            - heading "Proyecto MEP Básico en Revit" [level=5] [ref=e99]
+            - generic [ref=e101]: En línea
+            - paragraph [ref=e102]: Modela instalaciones hidráulicas, sanitarias, eléctricas y de climatización en Revit.
+            - link "Inscribirme" [ref=e104] [cursor=pointer]:
+              - /url: "#cta"
+    - generic [ref=e105]:
+      - generic [ref=e106]:
+        - img "Taller presencial BIM" [ref=e107]
+        - generic [ref=e109]:
+          - generic [ref=e110]:
+            - text: ">"
+            - heading "Sesiones Prácticas" [level=2] [ref=e111]:
+              - text: Sesiones
+              - text: Prácticas
+            - paragraph [ref=e112]: Grupos de máximo 12 personas para garantizar atención personalizada de cada uno de nuestros alumnos.
+          - generic [ref=e113]:
+            - generic [ref=e114] [cursor=pointer]:
+              - generic [ref=e115]: "12"
+              - generic [ref=e116]: Máximo de Personas
+            - generic [ref=e117] [cursor=pointer]:
+              - generic [ref=e118]: "4"
+              - generic [ref=e119]: Cursos Activos
+      - generic [ref=e120]:
+        - generic [ref=e121]:
+          - generic [ref=e122] [cursor=pointer]:
+            - generic [ref=e123]: 🏗
+            - generic [ref=e124]:
+              - generic [ref=e125]: Prácticas reales desde el día uno
+              - generic [ref=e126]: Ejercicios sobre proyectos reales del sector AEC.
+          - generic [ref=e127] [cursor=pointer]:
+            - generic [ref=e128]: 🎯
+            - generic [ref=e129]:
+              - generic [ref=e130]: Grupos Reducidos, Máximo Impacto
+              - generic [ref=e131]: Atención personalizada para garantizar el aprendizaje de cada uno de nuestros alumnos.
+          - generic [ref=e132] [cursor=pointer]:
+            - generic [ref=e133]: 💻
+            - generic [ref=e134]:
+              - generic [ref=e135]: Software y Hardware Incluidos
+              - generic [ref=e136]: Licencias temporales y acceso a laboratorio equipado garantizado para todos nuestros alumnos.
+        - generic [ref=e137]:
+          - generic [ref=e138]:
+            - heading "Próximas Fechas" [level=3] [ref=e139]
+            - paragraph [ref=e140]: Junio 2026
+          - generic [ref=e141]:
+            - generic [ref=e142]:
+              - generic [ref=e143]:
+                - strong [ref=e145]: Láminas Arquitectónicas Profesionales
+                - generic [ref=e146]: Presencial
+              - generic [ref=e147]:
+                - strong [ref=e149]: Introducción a la Metodología BIM
+                - generic [ref=e150]: En línea
+              - generic [ref=e151]:
+                - strong [ref=e153]: Proyecto Ejecutivo Básico
+                - generic [ref=e154]: Presencial
+              - generic [ref=e155]:
+                - strong [ref=e157]: Proyecto MEP Básico en Revit
+                - generic [ref=e158]: En línea
+            - link "Reservar mi lugar" [ref=e159] [cursor=pointer]:
+              - /url: https://wa.me/528116076954?text=Quiero%20reservar%20un%20Curso%20Dovela
+    - generic [ref=e160]:
+      - generic [ref=e161]:
+        - generic [ref=e162]: Preguntas Frecuentes
+        - heading "Todo lo que necesitas saber" [level=2] [ref=e163]:
+          - text: Todo lo que
+          - emphasis [ref=e164]: necesitas saber
+      - generic [ref=e165]:
+        - group [ref=e166]:
+          - generic "¿Necesito Experiencia Previa en BIM?" [ref=e167] [cursor=pointer]
+        - group [ref=e168]:
+          - generic "¿Cuáles son las Opciones de Pago?" [ref=e169] [cursor=pointer]
+        - group [ref=e170]:
+          - generic "¿Qué Pasa si no Puedo Asistir a una Sesión?" [ref=e171]
+        - group [ref=e172]:
+          - generic "¿Ofrecen Capacitación para Empresas?" [ref=e173]
+    - generic [ref=e175]:
+      - generic [ref=e176]:
+        - heading "Transforma tu Carrera BIM" [level=2] [ref=e177]:
+          - text: Transforma tu
+          - text: Carrera BIM
+        - paragraph [ref=e178]: Cupos limitados a 12 participantes por grupo para garantizar la calidad de formación que nos distingue.
+        - link "Escribir por WhatsApp" [ref=e179] [cursor=pointer]:
+          - /url: https://wa.me/528116076954?text=Hola,%20quiero%20información%20sobre%20Dovela%20Lab
+        - generic [ref=e181]:
+          - img [ref=e182]
+          - text: Asesoría Gratuita Antes de Inscribirte
+      - generic [ref=e184]:
+        - generic [ref=e185]: Solicita Información
+        - generic [ref=e186]:
+          - generic [ref=e187]:
+            - generic [ref=e188]:
+              - generic [ref=e189]: Nombre *
+              - textbox "Tu nombre" [ref=e190]
+            - generic [ref=e191]:
+              - generic [ref=e192]: Apellido *
+              - textbox "Tu apellido" [ref=e193]
+          - generic [ref=e194]:
+            - generic [ref=e195]: Correo Electrónico *
+            - textbox "correo@ejemplo.com" [ref=e196]
+          - generic [ref=e197]:
+            - generic [ref=e198]: WhatsApp / Teléfono
+            - textbox "+52 81 0000 0000" [ref=e199]
+          - generic [ref=e200]:
+            - generic [ref=e201]: Curso de Interés
+            - combobox [ref=e202] [cursor=pointer]:
+              - option "Selecciona Una Opción" [selected]
+              - option "Láminas Arquitectónicas Profesionales"
+              - option "Introducción a la Metodología BIM"
+              - option "Proyecto Ejecutivo Básico"
+              - option "Proyecto MEP Básico en Revit"
+          - generic [ref=e203]:
+            - generic [ref=e204]: Mensaje (Opcional)
+            - textbox "Cuéntanos sobre tu perfil o proyecto…" [ref=e205]
+          - button "Enviar Solicitud" [ref=e206] [cursor=pointer]
+    - button "Abrir chat" [ref=e207] [cursor=pointer]:
+      - generic: "1"
+      - img [ref=e208]
+    - generic:
+      - generic:
+        - generic: 🏛
+        - generic:
+          - strong: Dovela Lab
+          - generic:
+            - generic: Asistente en Línea
+        - button "Cerrar chat": ✕
+      - generic:
+        - button "📚 ¿Qué Cursos Tienen?"
+        - button "💰 ¿Cuánto Cuestan?"
+        - button "🔧 ¿Cuándo Son las Sesiones Prácticas?"
+        - button "💻 ¿Hay Clases en Línea?"
+        - button "🎯 ¿Qué Curso es Para Mí?"
+    - link "Escribir por WhatsApp" [ref=e210] [cursor=pointer]:
+      - /url: https://wa.me/528116076954?text=%C2%A1Hola%21%20Necesito%20informaci%C3%B3n
+      - img [ref=e211]
+  - contentinfo [ref=e213]:
+    - generic [ref=e214]:
+      - generic [ref=e215]:
+        - text: Dovela
+        - emphasis [ref=e216]: Lab
+        - generic [ref=e217]:
+          - text: Monterrey, NL
+          - generic [ref=e218]: contacto@dovelalab.com.mx
+      - generic [ref=e219]:
+        - generic [ref=e220]:
+          - link "Instagram" [ref=e221] [cursor=pointer]:
+            - /url: https://www.instagram.com/dovelalab/
+            - generic [ref=e222]: Instagram
+            - img [ref=e223]
+          - link "Facebook" [ref=e225] [cursor=pointer]:
+            - /url: https://www.facebook.com/dovelalab
+            - generic [ref=e226]: Facebook
+            - img [ref=e227]
+          - link "LinkedIn" [ref=e229] [cursor=pointer]:
+            - /url: https://linkedin.com/company/116062479/
+            - generic [ref=e230]: LinkedIn
+            - img [ref=e231]
+          - link "YouTube" [ref=e233] [cursor=pointer]:
+            - /url: https://www.youtube.com/channel/UCFHkXPqVjzlDkMTMTdD8JZw
+            - generic [ref=e234]: YouTube
+            - img [ref=e235]
+          - link "TikTok" [ref=e237] [cursor=pointer]:
+            - /url: https://www.tiktok.com/@dovela.lab
+            - generic [ref=e238]: TikTok
+            - img [ref=e239]
+        - generic [ref=e241]: Síguenos en nuestras redes sociales
+      - generic [ref=e242]:
+        - text: Landing Page creada por
+        - link "Norterrey" [ref=e243] [cursor=pointer]:
+          - /url: https://www.norterrey.com.mx

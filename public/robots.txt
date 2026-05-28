@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap (if you add one, update URL)
+# Sitemap: https://dovelalab.com.mx/sitemap.xml
+
+# Crawl-delay can be added for heavy sites
+# Crawl-delay: 10

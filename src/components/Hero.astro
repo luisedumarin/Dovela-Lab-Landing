@@ -1,0 +1,251 @@
+---
+
+---
+
+<section id="hero" class="relative overflow-hidden bg-amber-50 pt-[76px]">
+  <div class="hero-stage relative">
+    <picture>
+      <source
+        media="(max-width:639px)"
+        type="image/webp"
+        srcset="/images/hero-640.webp 1x, /images/hero-1200.webp 2x"
+      />
+      <source
+        media="(min-width:640px) and (max-width:1199px)"
+        type="image/webp"
+        srcset="/images/hero-640.webp 1x, /images/hero-1200.webp 2x"
+      />
+      <source type="image/webp" srcset="/images/hero-1200.webp" />
+      <img
+        src="/images/hero/hero.png"
+        alt="Próximamente Dovela Lab"
+        id="hero-img"
+        class="block h-[42vh] w-full object-cover object-center sm:h-[54vh] md:h-[calc(100vh-70px)]"
+        loading="eager"
+        decoding="async"
+        fetchpriority="high"
+        width="1200"
+        height="800"
+        style="aspect-ratio:3/2"
+      />
+    </picture>
+
+    <div
+      class="hero-form-card absolute bottom-6 left-1/2 z-[4] w-[90%] max-w-[28rem] -translate-x-1/2 rounded-2xl border border-white/20 bg-black/75 px-4 py-4 text-center text-white shadow-2xl backdrop-blur-sm sm:bottom-10 sm:px-5 sm:py-5 md:bottom-14 md:left-auto md:right-40 md:w-full md:max-w-[28rem] md:-translate-x-0 md:px-4 md:py-4 md:text-left"
+    >
+      <span
+        class="hero-form-tag mb-3 inline-flex items-center justify-center gap-1 text-[1rem] font-bold tracking-[2.6px] text-amber-300 md:justify-start"
+      >
+        Inscripciones Abiertas
+      </span>
+      <div
+        class="hero-form-title mb-8 text-[1.75rem] font-black leading-none text-white sm:text-[1.45rem]"
+      >
+        Inscribete en <span class="text-amber-300">Dovela Lab</span>
+      </div>
+      <form
+        class="cform flex flex-col gap-3"
+        id="heroLeadForm"
+        data-endpoint="https://formspree.io/f/xaqklajq"
+        novalidate
+        aria-label="Formulario de inscripción rápida"
+      >
+        <input type="hidden" name="_subject" value="Nueva solicitud Dovela" />
+        <div class="cf-row grid grid-cols-1 gap-5 md:grid-cols-2">
+          <div class="cf-field flex flex-col gap-1">
+            <label
+              class="text-[1.25rem] font-bold tracking-[.5px] text-white/100"
+              for="hf-nombre">Nombre</label
+            >
+            <input
+              name="nombre"
+              id="hf-nombre"
+              class="w-full rounded-[5px] border border-white/15 bg-white/5 px-3 py-2 text-white outline-none placeholder:text-white/40 text-sm"
+              placeholder="Tu nombre"
+              required
+              aria-required="true"
+            />
+          </div>
+          <div class="cf-field flex flex-col gap-1">
+            <label
+              class="text-[1.25rem] font-bold tracking-[.5px] text-white/100"
+              for="hf-apellido">Apellido</label
+            >
+            <input
+              name="apellido"
+              id="hf-apellido"
+              class="w-full rounded-[5px] border border-white/15 bg-white/5 px-3 py-2 text-white outline-none placeholder:text-white/40 text-sm"
+              placeholder="Tu apellido"
+              required
+              aria-required="true"
+            />
+          </div>
+        </div>
+
+        <div class="cf-field flex flex-col gap-1">
+          <label
+            class="text-[1.25rem] font-bold tracking-[.5px] text-white/100"
+            for="hf-email">Correo</label
+          >
+          <input
+            name="email"
+            id="hf-email"
+            type="email"
+            class="w-full rounded-[5px] border border-white/15 bg-white/5 px-2 py-2 text-white outline-none placeholder:text-white/40 text-sm"
+            placeholder="correo@ejemplo.com"
+            required
+            aria-required="true"
+          />
+        </div>
+
+        <div class="cf-field flex flex-col gap-1">
+          <label
+            class="text-[1.25rem] font-bold tracking-[.5px] text-white/100"
+            for="hf-tel">WhatsApp / Teléfono</label
+          >
+          <input
+            name="telefono"
+            id="hf-tel"
+            type="tel"
+            class="w-full rounded-[5px] border border-white/15 bg-white/5 px-4 py-3 text-white outline-none placeholder:text-white/40"
+            placeholder="+52 81 0000 0000"
+            required
+            aria-required="true"
+          />
+        </div>
+
+        <div class="cf-field flex flex-col gap-1">
+          <label
+            class="text-[1.25rem] font-bold tracking-[.5px] text-white/100"
+            for="hf-interes">Curso de Interés</label
+          >
+          <select
+            id="hf-interes"
+            name="interes"
+            required
+            class="w-full cursor-pointer rounded-[5px] border border-white/15 bg-white/5 px-2 py-2 text-white outline-none text-lg"
+          >
+            <option value="" disabled selected hidden
+              >Selecciona una Opción</option
+            >
+            <option value="Láminas Arquitectónicas Profesionales"
+              >Láminas Arquitectónicas Profesionales</option
+            >
+            <option value="Introducción a la Metodología BIM"
+              >Introducción a la Metodología BIM</option
+            >
+            <option value="Proyecto Ejecutivo Básico"
+              >Proyecto Ejecutivo Básico</option
+            >
+            <option value="Proyecto MEP Básico en Revit"
+              >Proyecto MEP Básico en Revit</option
+            >
+          </select>
+        </div>
+
+        <button
+          type="submit"
+          class="cf-submit mt-1 w-full rounded-[6px] border-0 bg-gradient-to-br from-[#8e4b31] to-[#c7663c] px-6 py-2 text-[1rem] font-bold tracking-[.3px] text-white shadow-[0_8px_22px_rgba(199,102,60,.22)]"
+        >
+          Quiero Información
+        </button>
+      </form>
+
+      <div
+        class="cf-success hidden rounded-[10px] border border-[#d9b4a4] p-6 text-center"
+        id="hero-ok"
+        style="background:#ffffff;color:#111111"
+      >
+        <span class="mb-2 block text-[2rem]">✅</span>
+        <p style="margin:0;font-weight:700">Mensaje enviado</p>
+      </div>
+    </div>
+  </div>
+  <style>
+    .hero-stage {
+      min-height: clamp(800px, 92vh, 940px);
+    }
+
+    @media (max-width: 767px) {
+      .hero-stage picture {
+        position: absolute;
+        inset: 0;
+        display: block;
+      }
+
+      #hero-img {
+        height: 100%;
+        min-height: 100%;
+        width: 100%;
+      }
+
+      .hero-form-card {
+        position: absolute;
+        top: 40%;
+        bottom: auto;
+        left: 50%;
+        right: auto;
+        width: min(86%, 360px);
+        max-width: 22rem;
+        margin: 0;
+        transform: translate(-50%, -50%);
+        text-align: center;
+        padding: 0.75rem; /* reduce padding on mobile */
+      }
+
+      /* Tipografía y inputs más compactos en mobile */
+      .hero-form-title {
+        font-size: 1.15rem;
+        margin-bottom: 0.6rem;
+      }
+      .hero-form-tag {
+        font-size: 0.85rem;
+      }
+      .hero-form-card .cf-field label {
+        font-size: 0.95rem;
+      }
+      .hero-form-card .cf-field input,
+      .hero-form-card .cf-field select,
+      .hero-form-card .cf-field textarea {
+        padding: 0.45rem 0.5rem;
+        font-size: 0.9rem;
+      }
+      .hero-form-card .cf-submit {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.95rem;
+      }
+    }
+
+    /* Si el menú móvil está abierto, reducir altura del Hero para evitar solapamientos */
+    .mobile-menu-open .hero-stage {
+      min-height: clamp(720px, 86vh, 860px);
+    }
+
+    .mobile-menu-open #hero-img {
+      height: clamp(180px, 40vh, 360px);
+    }
+
+    @media (min-width: 768px) {
+      .hero-form-card {
+        top: auto;
+        right: 10rem;
+        bottom: 9.5rem;
+        left: auto;
+        width: 100%;
+        max-width: 32rem;
+        transform: none;
+        text-align: left;
+      }
+    }
+
+    @media (min-width: 640px) and (max-width: 767px) {
+      #hero-img {
+        height: clamp(260px, 54vh, 460px);
+      }
+
+      .hero-form-card {
+        top: 40%;
+      }
+    }
+  </style>
+</section>

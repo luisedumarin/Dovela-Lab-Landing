@@ -1,0 +1,27 @@
+{
+  "name": "dovela-astro",
+  "private": true,
+  "version": "0.1.0",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "start:backend": "node server/index.js",
+    "optimize:images": "node ./scripts/optimize-images.js"
+  },
+  "dependencies": {
+    "@sendgrid/mail": "^7.7.0",
+    "body-parser": "^2.2.2",
+    "cors": "^2.8.6",
+    "dotenv": "^17.4.2",
+    "express": "^5.2.1",
+    "gsap": "^3.12.5"
+  },
+  "devDependencies": {
+    "astro": "^3.0.0",
+    "autoprefixer": "^10.4.0",
+    "postcss": "^8.4.0",
+    "sharp": "^0.32.0",
+    "tailwindcss": "^3.4.0"
+  }
+}

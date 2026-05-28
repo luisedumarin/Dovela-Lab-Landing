@@ -1,0 +1,55 @@
+---
+import SocialLinks from "./SocialLinks.astro";
+---
+
+<footer
+  class="bg-gradient-to-t from-neutral-900 via-neutral-900/95 to-neutral-800 border-t border-white/5 px-[5%] py-12"
+>
+  <div class="mx-auto max-w-[1280px]">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+      <div class="ft-brand text-center md:text-left">
+        <a
+          href="/"
+          class="inline-block text-[1.06rem] font-extrabold tracking-[1.5px] text-white"
+        >
+          Dovela<em class="not-italic font-extralight text-white/80"> Lab</em>
+        </a>
+        <address class="not-italic mt-3 text-[.85rem] text-white/60">
+          Monterrey, NL<br />
+          <a
+            href="mailto:contacto@dovelalab.com.mx"
+            class="text-white/70 underline decoration-dotted decoration-white/10 hover:text-white"
+            >contacto@dovelalab.com.mx</a
+          >
+        </address>
+      </div>
+
+      <div class="ft-links text-[.95rem]" aria-hidden="true"></div>
+
+      <div class="ft-social flex flex-col items-center md:items-end gap-3">
+        <div class="mb-1">
+          <SocialLinks />
+        </div>
+        <p class="text-[.8rem] text-white/50 text-center md:text-right">
+          Síguenos para noticias y novedades
+        </p>
+      </div>
+    </div>
+
+    <hr class="my-8 border-white/5" />
+
+    <div
+      class="flex flex-col md:flex-row items-center justify-between gap-4 text-[.85rem] text-white/40"
+    >
+      <p class="text-center md:text-left">
+        © {new Date().getFullYear()} Dovela Lab. Todos los derechos reservados.
+      </p>
+      <p class="text-center md:text-right">
+        Diseñado por <a
+          href="https://www.norterrey.com.mx"
+          class="text-white/60 hover:text-white transition-colors">Norterrey</a
+        >
+      </p>
+    </div>
+  </div>
+</footer>

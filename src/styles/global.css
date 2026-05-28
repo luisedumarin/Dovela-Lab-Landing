@@ -1,0 +1,207 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Original site CSS (migrated from inline <style> in dovela_mobile_fixed.html).
+   For now we keep the original rules here to preserve the look while we
+   gradually convert styles into Tailwind utility classes.
+*/
+/* ════════════════════════════════════
+   ROOT — LIGHT / WHITE DESIGN
+════════════════════════════════════ */
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  /* Backgrounds */
+  --bg:        #ffffff;
+  --bg2:       #fbf3ef;
+  --bg3:       #f7e8df;
+  --bg-dark:   #16100d;
+
+  /* Terracotta palette */
+  --blue-900:  #2a1813;
+  --blue-700:  #8e4b31;
+  --blue-500:  #c7663c;
+  --blue-400:  #e08a60;
+  --blue-100:  #f2d9cf;
+  --blue-50:   #fcf5f2;
+
+  /* Text */
+  --text:      #221714;
+  --text-2:    #4d342d;
+  --text-3:    #74564d;
+  --text-4:    #9a7e74;
+
+  /* Borders */
+  --bdr:       #ead7cf;
+  --bdr2:      #d9b4a4;
+  --bdr-dark:  rgba(199,102,60,.22);
+
+  /* Cards */
+  --card-bg:   #ffffff;
+  --card-bg2:  #f8fbff;
+
+  /* Accents */
+  --accent:    #c7663c;
+  --accent-h:  #a9532f;
+  --accent-l:  #e08a60;
+
+  --r:         10px;
+  --sec:       6rem;
+  --shadow-sm: 0 2px 12px rgba(13,26,46,.07);
+  --shadow-md: 0 6px 30px rgba(13,26,46,.1);
+  --shadow-lg: 0 16px 60px rgba(13,26,46,.12);
+}
+html{scroll-behavior:smooth;scrollbar-width:thin;scrollbar-color:var(--accent) #f6ebe5}
+body{font-family:'Montserrat',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;cursor:auto}
+::selection{background:rgba(199,102,60,.18);color:var(--blue-900)}
+img{display:block;max-width:100%}
+svg{display:block}
+
+/* Scrollbar */
+::-webkit-scrollbar{width:8px}
+::-webkit-scrollbar-track{background:#f6ebe5}
+::-webkit-scrollbar-thumb{background:linear-gradient(180deg,var(--accent),var(--blue-700));border-radius:999px;border:2px solid #f6ebe5}
+
+/* (rest of original CSS continues...) */
+
+/* ════════════════════════════════════
+    FLOATING CHAT + WHATSAPP
+════════════════════════════════════ */
+#cfab{
+   position:fixed;bottom:90px;right:26px;z-index:900;
+   width:52px;height:52px;border-radius:50%;
+   background:var(--accent);border:none;cursor:pointer;
+   display:flex;align-items:center;justify-content:center;
+   box-shadow:0 4px 20px rgba(199,102,60,.35);
+   transition:transform .2s,box-shadow .2s;
+   animation:fabGlow 3s ease-in-out infinite;
+}
+@keyframes fabGlow{0%,100%{box-shadow:0 4px 20px rgba(199,102,60,.35)}50%{box-shadow:0 4px 32px rgba(199,102,60,.6)}}
+#cfab:hover{transform:scale(1.1);animation:none;box-shadow:0 8px 32px rgba(199,102,60,.55)}
+#cfab svg{width:22px;height:22px;fill:#fff}
+.nb{position:absolute;top:-4px;right:-4px;width:17px;height:17px;background:#f44336;border-radius:50%;font-size:.53rem;font-weight:700;color:#fff;display:flex;align-items:center;justify-content:center;border:2px solid #fff;animation:nbBounce .4s cubic-bezier(.34,1.6,.64,1)}
+@keyframes nbBounce{0%{transform:scale(0)}100%{transform:scale(1)}}
+
+#cbox{
+   position:fixed;bottom:156px;right:26px;z-index:900;
+   width:355px;max-height:540px;
+   background:#fff;border:1px solid var(--bdr);border-radius:16px;
+   box-shadow:0 24px 80px rgba(13,26,46,.18),0 0 0 1px rgba(199,102,60,.06);
+   display:flex;flex-direction:column;
+   opacity:0;transform:translateY(20px) scale(.94);pointer-events:none;
+   transition:all .32s cubic-bezier(.34,1.3,.64,1);
+}
+#cbox.open{opacity:1;transform:translateY(0) scale(1);pointer-events:all}
+.ch{background:linear-gradient(120deg,var(--blue-900),var(--accent));padding:1.1rem 1.3rem;border-radius:16px 16px 0 0;display:flex;align-items:center;gap:.85rem;flex-shrink:0}
+.c-av{width:38px;height:38px;border-radius:50%;background:rgba(255,255,255,.15);border:2px solid rgba(255,255,255,.22);display:flex;align-items:center;justify-content:center;font-size:1.05rem;flex-shrink:0}
+.c-inf strong{display:block;font-size:.87rem;font-weight:700;color:#fff}
+.c-st{display:flex;align-items:center;gap:.35rem;font-size:.65rem;color:rgba(255,255,255,.65)}
+.std{width:5px;height:5px;border-radius:50%;background:#4cff7b;animation:pulseDot 2s ease-in-out infinite}
+.cx{margin-left:auto;background:rgba(255,255,255,.1);border:none;border-radius:50%;width:26px;height:26px;cursor:pointer;color:rgba(255,255,255,.75);font-size:.8rem;display:flex;align-items:center;justify-content:center;transition:background .2s;flex-shrink:0}
+.cx:hover{background:rgba(255,255,255,.22)}
+.cm{flex:1;overflow-y:auto;padding:1.1rem;display:flex;flex-direction:column;gap:.8rem;scrollbar-width:thin;scrollbar-color:var(--bdr) transparent}
+.msg{max-width:88%;font-size:.81rem;line-height:1.58;padding:.65rem .9rem;border-radius:12px;animation:msgIn .22s ease}
+@keyframes msgIn{from{opacity:0;transform:translateY(7px)}to{opacity:1;transform:translateY(0)}}
+.bot{background:var(--blue-50);border:1px solid var(--bdr);color:var(--text);align-self:flex-start;border-radius:4px 12px 12px 12px;white-space:pre-line}
+.usr{background:var(--accent);color:#fff;align-self:flex-end;border-radius:12px 4px 12px 12px}
+.dots{display:flex;gap:4px;align-items:center;padding:.65rem .9rem}
+.dots span{width:6px;height:6px;border-radius:50%;background:var(--accent);animation:td .9s ease-in-out infinite}
+.dots span:nth-child(2){animation-delay:.15s}
+.dots span:nth-child(3){animation-delay:.3s}
+@keyframes td{0%,100%{transform:translateY(0);opacity:.35}50%{transform:translateY(-5px);opacity:1}}
+.co{padding:.72rem 1rem 1rem;display:flex;flex-direction:column;gap:.36rem;border-top:1px solid var(--bdr);flex-shrink:0}
+.cop{background:var(--blue-50);border:1px solid var(--bdr);color:var(--text-2);padding:.48rem .9rem;border-radius:20px;font-size:.76rem;cursor:pointer;text-align:left;transition:all .2s;font-family:'Montserrat',sans-serif;display:flex;align-items:center;gap:.45rem;font-weight:500}
+.cop:hover{background:var(--blue-100);color:var(--accent);border-color:var(--bdr2);transform:translateX(3px)}
+.crst{padding:.5rem 1rem;text-align:center;flex-shrink:0;display:none}
+.crst button{background:none;border:none;color:var(--accent);font-size:.7rem;cursor:pointer;font-family:'Montserrat',sans-serif;transition:color .2s;font-weight:600}
+.crst button:hover{color:var(--blue-700)}
+
+#wfab{position:fixed;bottom:26px;right:26px;z-index:900;width:52px;height:52px;border-radius:50%;background:#25d366;text-decoration:none;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.32);transition:transform .2s,box-shadow .2s}
+#wfab:hover{transform:scale(1.1);box-shadow:0 10px 34px rgba(37,211,102,.5)}
+#wfab svg{width:27px;height:27px;fill:#fff}
+
+@media(max-width:768px){
+   #cbox{left:50%;right:auto;width:min(100vw - 16px, 376px);bottom:130px;max-height:70vh;transform:translateX(-50%) translateY(20px) scale(.94)}
+   #cbox.open{transform:translateX(-50%) translateY(0) scale(1)}
+   #cfab{bottom:82px;right:16px;width:48px;height:48px}
+   #wfab{bottom:16px;right:16px;width:48px;height:48px}
+   #wfab svg{width:24px;height:24px}
+   #cfab svg{width:20px;height:20px}
+}
+
+@media(min-width:481px) and (max-width:768px){
+   #cbox{width:344px;max-height:68vh}
+}
+
+@media(max-width:480px){
+   #cbox{bottom:122px}
+   #cfab{right:12px}
+   #wfab{right:12px}
+}
+
+/* Remove blue tap highlight and suppress focus ring for pointer interactions,
+    but keep visible focus for keyboard users via :focus-visible. */
+a, button, input, textarea, label, summary, [role="button"], [role="link"] {
+   -webkit-tap-highlight-color: transparent;
+}
+
+/* Suppress default focus outlines for pointer interactions */
+:focus:not(:focus-visible) {
+   outline: none !important;
+   box-shadow: none !important;
+}
+
+/* Provide clear focus indicator for keyboard users */
+:focus-visible {
+   outline: 2px solid rgba(199,102,60,0.95);
+   outline-offset: 3px;
+   border-radius: 6px;
+}
+
+/* Keep form field backgrounds stable in the hero and CTA forms, including browser autofill */
+.hero-form-card input,
+.hero-form-card select {
+   background-color: rgba(255,255,255,.05);
+}
+
+.cta-form-wrap input,
+.cta-form-wrap select,
+.cta-form-wrap textarea {
+   background-color: #fbf3ef;
+}
+
+.hero-form-card input:-webkit-autofill,
+.hero-form-card input:-webkit-autofill:hover,
+.hero-form-card input:-webkit-autofill:focus,
+.hero-form-card select:-webkit-autofill,
+.hero-form-card select:-webkit-autofill:hover,
+.hero-form-card select:-webkit-autofill:focus {
+   -webkit-box-shadow: 0 0 0 1000px rgba(255,255,255,.05) inset !important;
+   -webkit-text-fill-color: #fff !important;
+   caret-color: #fff;
+   transition: background-color 9999s ease-out 0s;
+}
+
+.cta-form-wrap input:-webkit-autofill,
+.cta-form-wrap input:-webkit-autofill:hover,
+.cta-form-wrap input:-webkit-autofill:focus,
+.cta-form-wrap select:-webkit-autofill,
+.cta-form-wrap select:-webkit-autofill:hover,
+.cta-form-wrap select:-webkit-autofill:focus,
+.cta-form-wrap textarea:-webkit-autofill,
+.cta-form-wrap textarea:-webkit-autofill:hover,
+.cta-form-wrap textarea:-webkit-autofill:focus {
+   -webkit-box-shadow: 0 0 0 1000px #fbf3ef inset !important;
+   -webkit-text-fill-color: #221714 !important;
+   caret-color: #221714;
+   transition: background-color 9999s ease-out 0s;
+}
+
+/* Also remove focus background/outline on anchors/images when active/tapped */
+a:active, a:focus {
+   background: transparent;
+}
+
+/* Badge pulse effect when user clicks the metric badge */
+.badge-pulse{transform:scale(1.06);box-shadow:0 18px 48px rgba(0,0,0,.22);transition:transform .18s ease,box-shadow .18s ease}
+

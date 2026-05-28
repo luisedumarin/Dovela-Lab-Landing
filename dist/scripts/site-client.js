@@ -197,14 +197,6 @@ document.addEventListener('DOMContentLoaded', () => {
           try { this.reset(); } catch (e) { /* ignore */ }
           // Ocultar mensaje después de 4s
           setTimeout(()=>{ try{ ok.style.display='none'; }catch(e){} }, 4000);
-          // Reiniciar la landing (redirigir al root) después de mostrar confirmación
-          try {
-            setTimeout(()=>{
-              try{ window.softResetDovelaForms?.(); }catch(e){}
-              try{ history.replaceState && history.replaceState(null,'','/'); }catch(e){}
-              try{ location.replace('/'); }catch(e){}
-            }, 1000);
-          } catch (e) { /* ignore */ }
         }
       } catch (err) {
         alert('Ocurrió un error al enviar. Intenta de nuevo.');
@@ -294,40 +286,40 @@ document.addEventListener('DOMContentLoaded', () => {
   });
   const crb = document.getElementById('crb'); if(crb){ crb.addEventListener('click', ()=>{ if(cmsg) cmsg.innerHTML=''; addMsg('¡Hola! 👋 Soy el Asistente de Dovela Lab. ¿En Qué te Puedo Ayudar?','bot'); if(copts) copts.style.display='flex'; if(crst) crst.style.display='none'; }); }
 
-  // Preseleccionar curso cuando se hace click en botones "Inscribirme"
-  document.querySelectorAll('a[data-course]').forEach(a=>{
-    a.addEventListener('click', (e)=>{
-      const course = a.getAttribute('data-course');
-      if(!course) return;
-      // find the contact select and set value
-      const sel = document.getElementById('cf-curso');
-      const heroSel = document.getElementById('hf-interes');
-      if(sel){
-        // set value by matching option text or value (case-insensitive, trim)
-        const target = course.trim().toLowerCase();
-        let matched = false;
-        for(const opt of sel.options){
-          const txt = (opt.text || '').trim().toLowerCase();
-          const val = (opt.value || '').trim().toLowerCase();
-          if(txt === target || val === target || txt.includes(target) || target.includes(txt)){
-            opt.selected = true; matched = true; break;
+    // Preseleccionar curso cuando se hace click en botones "Inscribirme"
+    document.querySelectorAll('a[data-course]').forEach(a=>{
+      a.addEventListener('click', (e)=>{
+        const course = a.getAttribute('data-course');
+        if(!course) return;
+        // find the contact select and set value
+        const sel = document.getElementById('cf-curso');
+        const heroSel = document.getElementById('hf-interes');
+        if(sel){
+          // set value by matching option text or value (case-insensitive, trim)
+          const target = course.trim().toLowerCase();
+          let matched = false;
+          for(const opt of sel.options){
+            const txt = (opt.text || '').trim().toLowerCase();
+            const val = (opt.value || '').trim().toLowerCase();
+            if(txt === target || val === target || txt.includes(target) || target.includes(txt)){
+              opt.selected = true; matched = true; break;
+            }
+          }
+          if(matched){ try{ sel.dispatchEvent(new Event('change',{bubbles:true})); }catch(e){} }
+        }
+        if(heroSel){
+          const targetH = course.trim().toLowerCase();
+          for(const opt of heroSel.options){
+            const txt = (opt.text || '').trim().toLowerCase();
+            const val = (opt.value || '').trim().toLowerCase();
+            if(txt === targetH || val === targetH || txt.includes(targetH) || targetH.includes(txt)){
+              opt.selected = true; try{ heroSel.dispatchEvent(new Event('change',{bubbles:true})); }catch(e){} break;
+            }
           }
         }
-        if(matched){ try{ sel.dispatchEvent(new Event('change',{bubbles:true})); }catch(e){} }
-      }
-      if(heroSel){
-        const targetH = course.trim().toLowerCase();
-        for(const opt of heroSel.options){
-          const txt = (opt.text || '').trim().toLowerCase();
-          const val = (opt.value || '').trim().toLowerCase();
-          if(txt === targetH || val === targetH || txt.includes(targetH) || targetH.includes(txt)){
-            opt.selected = true; try{ heroSel.dispatchEvent(new Event('change',{bubbles:true})); }catch(e){} break;
-          }
-        }
-      }
-      // allow anchor default (scroll to #cta) to proceed
+        // allow anchor default (scroll to #cta) to proceed
+      });
     });
-  });
 
     // Interactividad: badge '4 Cursos Activos' -> solo feedback visual
     const metricBadge = document.getElementById('metric-badge');

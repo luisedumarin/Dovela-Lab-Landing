@@ -80,13 +80,13 @@ const organizationJsonLd = {
     <meta name="twitter:image" content={ogImage} />
     <link rel="preload" as="image" href="/images/hero-1200.webp" />
     <link rel="preload" as="image" href="/images/logo/LOGODOVELA.png" />
-    <link rel="stylesheet" href="/src/styles/global.css" />
+    <!-- global styles are imported in the module above; do not reference /src directly here -->
     <script
       type="application/ld+json"
       set:html={JSON.stringify(organizationJsonLd)}
     />
-    <script type="module" src="/src/scripts/gsap-client.js" defer></script>
-    <script type="module" src="/src/scripts/site-client.js" defer></script>
+    <script type="module" src="/scripts/gsap-client.js" defer></script>
+    <script type="module" src="/scripts/site-client.js" defer></script>
   </head>
   <body>
     <div id="app">

@@ -121,8 +121,8 @@ svg{display:block}
 #wfab svg{width:27px;height:27px;fill:#fff}
 
 @media(max-width:768px){
-   /* Make the chatbox narrower on mobile to improve layout and avoid edge-to-edge feel */
-   #cbox{left:50%;right:auto;width:min(100vw - 24px, 320px);bottom:130px;max-height:70vh;transform:translateX(-50%) translateY(20px) scale(.94)}
+   /* Set mobile chatbox to ~300px for a slightly wider but controlled size */
+   #cbox{left:50%;right:auto;width:min(100vw - 24px, 300px);bottom:130px;max-height:70vh;transform:translateX(-50%) translateY(20px) scale(.94)}
    #cbox.open{transform:translateX(-50%) translateY(0) scale(1)}
    #cfab{bottom:82px;right:16px;width:48px;height:48px}
    #wfab{bottom:16px;right:16px;width:48px;height:48px}
@@ -131,12 +131,12 @@ svg{display:block}
 }
 
 @media(min-width:481px) and (max-width:768px){
-   /* Tablet / small landscape phones: use slightly smaller fixed width */
-   #cbox{width:320px;max-height:68vh}
+   /* Tablet / small landscape phones: keep chat at 300px */
+   #cbox{width:300px;max-height:68vh}
 }
 
 @media(max-width:480px){
-   /* Small phones: limit chat width even more so it doesn't feel too wide */
+   /* Small phones: fixed max width 300px */
    #cbox{bottom:122px; width: min(100vw - 28px, 300px);}
    #cfab{right:12px}
    #wfab{right:12px}

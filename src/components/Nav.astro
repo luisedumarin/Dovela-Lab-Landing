@@ -108,7 +108,9 @@
       if(!h || !m) return;
       if(h.dataset._inlineAdded) return;
       h.dataset._inlineAdded = '1';
-      h.addEventListener('click', function(){
+      h.addEventListener('click', function(e){
+        // prevent other click listeners on this element from running (defensive)
+        try{ e.stopImmediatePropagation(); }catch(err){}
         const open = h.classList.toggle('open');
         if(open){
           m.style.display = 'flex';
@@ -125,7 +127,7 @@
           document.body.classList.remove('mobile-menu-open');
           document.body.style.overflow = '';
         }
-      });
+      }, true);
     }catch(e){/* no-op */}
   })();
 </script>

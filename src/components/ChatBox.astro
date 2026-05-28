@@ -2,6 +2,29 @@
 
 ---
 
+<style>
+  /* ChatBox responsive sizing: at >=500px use fixed 414x400, below scale proportionally */
+  #cbox {
+    width: min(414px, calc(100vw - 32px));
+    max-width: 414px;
+    aspect-ratio: 414 / 400;
+    overflow: hidden;
+  }
+
+  @media (min-width: 500px) {
+    #cbox {
+      width: 414px;
+      height: 400px;
+    }
+  }
+
+  @media (max-width: 499px) {
+    #cbox {
+      width: calc(100vw - 32px);
+    }
+  }
+</style>
+
 <button id="cfab" type="button" aria-label="Abrir chat">
   <div class="nb">1</div>
   <svg viewBox="0 0 24 24" aria-hidden="true">

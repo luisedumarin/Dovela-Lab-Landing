@@ -163,7 +163,17 @@
   </div>
   <style>
     .hero-stage {
-      min-height: clamp(800px, 92vh, 940px);
+      /* Reduce the minimum height so the hero doesn't create a large gap
+         on medium/small viewports. Desktop keeps the large max value. */
+      min-height: clamp(420px, 92vh, 940px);
+    }
+
+    @media (max-width: 767px) {
+      /* Make hero fill the viewport on mobile so the form fits fully */
+      .hero-stage {
+        min-height: 100vh;
+        height: 100vh;
+      }
     }
 
     @media (max-width: 767px) {
@@ -180,13 +190,14 @@
       }
 
       .hero-form-card {
+        /* Keep as absolute so it scrolls with the page, but larger hero provides room */
         position: absolute;
-        top: 40%;
+        top: 50%;
         bottom: auto;
         left: 50%;
         right: auto;
-        width: min(86%, 360px);
-        max-width: 22rem;
+        width: min(86%, 380px);
+        max-width: 24rem;
         margin: 0;
         transform: translate(-50%, -50%);
         text-align: center;
@@ -240,11 +251,11 @@
 
     @media (min-width: 640px) and (max-width: 767px) {
       #hero-img {
-        height: clamp(260px, 54vh, 460px);
+        height: clamp(320px, 72vh, 680px);
       }
 
       .hero-form-card {
-        top: 40%;
+        top: 50%;
       }
     }
   </style>

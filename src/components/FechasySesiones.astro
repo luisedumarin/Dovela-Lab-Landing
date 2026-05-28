@@ -4,6 +4,41 @@ const whatsappUrl =
 import FechasyHero from "./FechasyHero.astro";
 ---
 
+<style>
+  /* Botón WhatsApp: a partir de 1120px hacia abajo medir 462x40 y escalar proporcionalmente */
+  .wa-btn.cal-cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+
+  @media (max-width: 1120px) {
+    /* Escala proporcionalmente desde 1120px: 462px en 1120, y reduce linealmente abajo */
+    .wa-btn.cal-cta {
+      /* Use width relative to the parent card instead of viewport to avoid shifting */
+      max-width: 462px !important;
+      width: 90% !important;
+      height: 40px !important;
+      padding-left: 12px !important;
+      padding-right: 12px !important;
+      margin-top: 16px !important;
+      margin-bottom: 12px !important;
+      transform: none !important;
+      position: static !important;
+      z-index: auto !important;
+    }
+  }
+
+  /* Asegura comportamiento en móviles muy pequeños */
+  @media (max-width: 380px) {
+    .wa-btn.cal-cta {
+      width: calc(100vw - 24px) !important;
+      height: 36px !important;
+    }
+  }
+</style>
+
 <FechasyHero />
 
 <!-- Anchor for 'Fechas y Sesiones' to allow nav links to target this section -->
@@ -16,22 +51,22 @@ import FechasyHero from "./FechasyHero.astro";
     class="fs-cards flex h-full w-full max-w-[26rem] flex-col gap-3 md:max-w-none md:justify-between md:gap-4 md:pb-4 md:pt-2"
   >
     <div
-      class="fs-card group flex min-h-[104px] flex-1 flex-col items-center gap-3 rounded-[10px] border border-[#ead7cf] bg-white p-[1rem_1.1rem] text-center shadow-[0_2px_12px_rgba(13,26,46,.07)] transition-all duration-300 hover:-translate-y-1 hover:border-[#d9b4a4] hover:shadow-[0_12px_28px_rgba(13,26,46,.12)] cursor-pointer md:h-[130px] md:min-h-[130px] md:max-h-[130px] md:flex-row md:items-start md:gap-4 md:p-[1.25rem_1.5rem] md:text-left"
+      class="fs-card group flex min-h-[104px] flex-1 flex-col items-center gap-2 md:gap-4 rounded-[10px] border border-[#ead7cf] bg-white p-[1rem_1.1rem] text-center shadow-[0_2px_12px_rgba(13,26,46,.07)] transition-all duration-300 hover:-translate-y-1 hover:border-[#d9b4a4] hover:shadow-[0_12px_28px_rgba(13,26,46,.12)] cursor-pointer md:h-[130px] md:min-h-[130px] md:max-h-[130px] md:flex-row md:items-center md:justify-center md:p-[1.25rem_1.5rem] md:text-left"
       data-fs-card
     >
       <div
-        class="fs-ico mx-auto text-[1.15rem] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-6deg] md:mx-0 md:text-[1.4rem]"
+        class="fs-ico flex shrink-0 items-center justify-center w-[2.6rem] md:w-[4rem] text-[1.5rem] md:text-[2rem] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-6deg]"
       >
         🏗
       </div>
-      <div>
+      <div class="min-w-0 w-full md:max-w-[18rem]">
         <div
-          class="fs-title mb-1 text-[1.2rem] font-bold leading-[1.15] text-[#2a1813] md:text-[1.25rem]"
+          class="fs-title mb-0 md:mb-1 text-center md:text-left text-[1.2rem] font-bold leading-[1.15] text-[#2a1813] md:text-[1.25rem]"
         >
           Prácticas reales desde el día uno
         </div>
         <div
-          class="fs-desc text-[.58rem] font-light leading-[1.45] text-[#74564d] md:text-[1rem] md:leading-[1.62]"
+          class="fs-desc max-[440px]:break-words max-[440px]:text-center text-[.58rem] font-light leading-[1.45] text-[#74564d] md:text-[1rem] md:leading-[1.62]"
         >
           Ejercicios sobre proyectos reales del sector AEC.
         </div>
@@ -39,22 +74,22 @@ import FechasyHero from "./FechasyHero.astro";
     </div>
 
     <div
-      class="fs-card group flex min-h-[104px] flex-1 flex-col items-center gap-3 rounded-[10px] border border-[#ead7cf] bg-white p-[1rem_1.1rem] text-center shadow-[0_2px_12px_rgba(13,26,46,.07)] transition-all duration-300 hover:-translate-y-1 hover:border-[#d9b4a4] hover:shadow-[0_12px_28px_rgba(13,26,46,.12)] cursor-pointer md:h-[130px] md:min-h-[130px] md:max-h-[130px] md:flex-row md:items-start md:gap-4 md:p-[1.25rem_1.5rem] md:text-left"
+      class="fs-card group flex min-h-[104px] flex-1 flex-col items-center gap-2 md:gap-4 rounded-[10px] border border-[#ead7cf] bg-white p-[1rem_1.1rem] text-center shadow-[0_2px_12px_rgba(13,26,46,.07)] transition-all duration-300 hover:-translate-y-1 hover:border-[#d9b4a4] hover:shadow-[0_12px_28px_rgba(13,26,46,.12)] cursor-pointer md:h-[130px] md:min-h-[130px] md:max-h-[130px] md:flex-row md:items-center md:justify-center md:p-[1.25rem_1.5rem] md:text-left"
       data-fs-card
     >
       <div
-        class="fs-ico mx-auto text-[1.75rem] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-6deg] md:mx-0 md:text-[1.4rem]"
+        class="fs-ico flex shrink-0 items-center justify-center w-[2.6rem] md:w-[4rem] text-[1.5rem] md:text-[2rem] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-6deg]"
       >
         🎯
       </div>
-      <div>
+      <div class="min-w-0 w-full md:max-w-[18rem]">
         <div
-          class="fs-title mb-1 text-[1.2rem] font-bold leading-[1.15] text-[#2a1813] md:text-[1.25rem]"
+          class="fs-title mb-0 md:mb-1 text-center md:text-left max-[440px]:text-[1rem] text-[1.2rem] font-bold leading-[1.15] text-[#2a1813] md:text-[1.25rem]"
         >
           Grupos reducidos, máximo impacto
         </div>
         <div
-          class="fs-desc text-[.58rem] font-light leading-[1.45] text-[#74564d] md:text-[1rem] md:leading-[1.62]"
+          class="fs-desc max-[440px]:break-words max-[440px]:text-center break-words text-center md:text-left text-[.58rem] font-light leading-[1.45] text-[#74564d] md:text-[1rem] md:leading-[1.62]"
         >
           Atención personalizada para garantizar el máximo aprendizaje.
         </div>
@@ -62,22 +97,22 @@ import FechasyHero from "./FechasyHero.astro";
     </div>
 
     <div
-      class="fs-card group flex min-h-[104px] flex-1 flex-col items-center gap-3 rounded-[10px] border border-[#ead7cf] bg-white p-[1rem_1.1rem] text-center shadow-[0_2px_12px_rgba(13,26,46,.07)] transition-all duration-300 hover:-translate-y-1 hover:border-[#d9b4a4] hover:shadow-[0_12px_28px_rgba(13,26,46,.12)] cursor-pointer md:h-[130px] md:min-h-[130px] md:max-h-[130px] md:flex-row md:items-start md:gap-4 md:p-[1.25rem_1.5rem] md:text-left"
+      class="fs-card group flex min-h-[104px] flex-1 flex-col items-center gap-2 md:gap-4 rounded-[10px] border border-[#ead7cf] bg-white p-[1rem_1.1rem] text-center shadow-[0_2px_12px_rgba(13,26,46,.07)] transition-all duration-300 hover:-translate-y-1 hover:border-[#d9b4a4] hover:shadow-[0_12px_28px_rgba(13,26,46,.12)] cursor-pointer md:h-[130px] md:min-h-[130px] md:max-h-[130px] md:flex-row md:items-center md:justify-center md:p-[1.25rem_1.5rem] md:text-left"
       data-fs-card
     >
       <div
-        class="fs-ico mx-auto text-[1.15rem] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-6deg] md:mx-0 md:text-[1.4rem]"
+        class="fs-ico flex shrink-0 items-center justify-center w-[2.6rem] md:w-[4rem] text-[1.5rem] md:text-[2rem] transition-transform duration-300 group-hover:scale-110 group-hover:rotate-[-6deg]"
       >
         💻
       </div>
-      <div>
+      <div class="min-w-0 w-full md:max-w-[18rem]">
         <div
-          class="fs-title mb-1 text-[1.2rem] font-bold leading-[1.15] text-[#2a1813] md:text-[1.25rem]"
+          class="fs-title mb-0 md:mb-1 text-center md:text-left text-[1.2rem] font-bold leading-[1.15] text-[#2a1813] md:text-[1.25rem]"
         >
           Software y hardware incluidos
         </div>
         <div
-          class="fs-desc text-[.58rem] font-light leading-[1.45] text-[#74564d] md:text-[1rem] md:leading-[1.62]"
+          class="fs-desc max-[440px]:break-words max-[440px]:text-center text-[.58rem] font-light leading-[1.45] text-[#74564d] md:text-[1rem] md:leading-[1.62]"
         >
           Licencias temporales y acceso a nuestro laboratorio.
         </div>
@@ -165,11 +200,12 @@ import FechasyHero from "./FechasyHero.astro";
         </div>
       </div>
     </div>
+
     <a
       href={whatsappUrl}
       target="_blank"
       rel="noopener noreferrer"
-      class="wa-btn cal-cta mx-auto mt-0 mb-0 flex w-full max-w-[20rem] items-center justify-center gap-2 rounded-[6px] border-0 bg-[#25d366] px-5 py-2 text-center text-[.92rem] font-bold tracking-[.3px] text-white no-underline shadow-[0_4px_18px_rgba(37,211,102,.2)] transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-[0_6px_22px_rgba(37,211,102,.28)] md:mt-[-4rem] md:mb-6 md:w-full md:max-w-[30rem] md:px-6 md:py-2 md:text-[.95rem]"
+      class="wa-btn cal-cta mx-auto mt-0 mb-0 flex w-full max-w-[20rem] items-center justify-center gap-2 rounded-[6px] border-0 bg-[#25d366] px-5 py-2 text-center text-[.92rem] font-bold tracking-[.3px] text-white no-underline shadow-[0_4px_18px_rgba(37,211,102,.2)] transition-transform duration-200 hover:-translate-y-0.5 hover:shadow-[0_6px_22px_rgba(37,211,102,.28)] md:mt-[-8rem] md:mb-6 md:w-full md:max-w-[33rem] md:px-6 md:py-2 md:text-[.95rem]"
       data-wa-url={whatsappUrl}
     >
       Información por WhatsApp

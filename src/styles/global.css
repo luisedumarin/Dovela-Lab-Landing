@@ -208,3 +208,51 @@ a:active, a:focus {
 /* Badge pulse effect when user clicks the metric badge */
 .badge-pulse{transform:scale(1.06);box-shadow:0 18px 48px rgba(0,0,0,.22);transition:transform .18s ease,box-shadow .18s ease}
 
+/* Override: ChatBox sizing per request
+    - >=500px: fixed 414x400
+    - <500px: scale proportionally using viewport width
+*/
+@media (min-width: 500px) {
+   #cbox {
+      width: 414px !important;
+      height: 400px !important;
+      max-height: none !important;
+      left: auto !important;
+      right: 26px !important;
+      bottom: 156px !important;
+   }
+}
+
+@media (max-width: 499px) {
+   #cbox {
+      width: calc(100vw - 32px) !important;
+      height: auto !important;
+      max-height: 70vh !important;
+      left: 50% !important;
+      right: auto !important;
+      transform: translateX(-50%) translateY(20px) scale(.94) !important;
+   }
+   #cbox.open { transform: translateX(-50%) translateY(0) scale(1) !important; }
+}
+
+/* Wa-btn: fixed width on desktop, scale down proportionally on smaller viewports
+    - Desktop (>=769px): keep fixed width so it doesn't move the layout
+    - Mobile: use the smaller of the fixed width or a percentage of the viewport
+    This overrides component-scoped rules if necessary. */
+.wa-btn.cal-cta {
+   max-width: 462px;
+   width: auto; /* let the parent/card determine flow on desktop */
+   display: inline-flex;
+   margin: 12px auto 0 !important; /* keep separation from the card and centered */
+   box-sizing: border-box;
+}
+
+/* On smaller viewports make the button proportional to its parent card width */
+@media (max-width: 768px) {
+   .wa-btn.cal-cta {
+      width: 90% !important;
+      margin-top: 12px !important;
+      align-self: center;
+   }
+}
+

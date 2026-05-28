@@ -20,6 +20,28 @@ try {
 }
 ---
 
+<style>
+  /* Imágenes de cursos: mantener 440px en desktop, pero a partir de 1000px escalar proporcionalmente hacia abajo */
+  .course-img {
+    height: 440px;
+    transition: height 200ms ease;
+  }
+
+  @media (max-width: 1000px) {
+    /* 440px a 1000px -> proporción 44vw (440/1000 = 0.44) */
+    .course-img {
+      height: min(440px, 44vw) !important;
+    }
+  }
+
+  @media (max-width: 500px) {
+    .course-img {
+      height: auto !important;
+      object-fit: contain !important;
+    }
+  }
+</style>
+
 <article
   class="group relative bg-white border rounded-xl shadow-sm overflow-visible flex h-full flex-col max-w-[460px] mx-auto transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_18px_50px_rgba(13,26,46,.16)]"
 >
@@ -43,7 +65,7 @@ try {
     <img
       src={pngFallback}
       alt={title}
-      class="w-full h-[440px] object-cover"
+      class="course-img w-full h-[440px] object-cover max-[500px]:h-auto max-[500px]:object-contain"
       loading="lazy"
       decoding="async"
     />

@@ -99,6 +99,37 @@
   >
 </div>
 
+<script>
+  (function(){
+    // Inline fallback toggle for mobile hamburger -- small, defensive and safe.
+    try{
+      const h = document.getElementById('hamburger');
+      const m = document.getElementById('mobile-nav');
+      if(!h || !m) return;
+      if(h.dataset._inlineAdded) return;
+      h.dataset._inlineAdded = '1';
+      h.addEventListener('click', function(){
+        const open = h.classList.toggle('open');
+        if(open){
+          m.style.display = 'flex';
+          m.setAttribute('aria-hidden','false');
+          h.setAttribute('aria-expanded','true');
+          requestAnimationFrame(()=>m.classList.add('open'));
+          document.body.classList.add('mobile-menu-open');
+          document.body.style.overflow = 'hidden';
+        } else {
+          m.classList.remove('open');
+          m.setAttribute('aria-hidden','true');
+          h.setAttribute('aria-expanded','false');
+          setTimeout(()=>m.style.display='none',280);
+          document.body.classList.remove('mobile-menu-open');
+          document.body.style.overflow = '';
+        }
+      });
+    }catch(e){/* no-op */}
+  })();
+</script>
+
 <style>
   /* estado abierto del menú móvil */
   .mobile-nav.open {
